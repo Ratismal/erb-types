@@ -2,7 +2,7 @@
     "name": "erb-types",
     "displayName": "erb-types",
     "description": "",
-    "version": "0.0.1",
+    "version": "0.1.1",
     "engines": {
         "vscode": "^1.34.0"
     },
@@ -12,24 +12,78 @@
     ],
     "repository": {"type": "git", "url": "https://github.com/Ratismal/erb-types"},
     "contributes": {
-        "languages": [{
-            "id": "js.erb",
-            "aliases": ["JavaScript (ERB)"],
-            "extensions": [".js.erb"],
-            "configuration": "./language-configuration.json"
-        }],
-        "grammars": [{
-            "language": "js.erb",
-            "path": "./syntaxes/js.erb.tmLanguage.json",
-            "scopeName": "source.js.erb"
-        }, {
-            "language": "erb",
-            "path": "./syntaxes/erb.tmLanguage.json",
-            "scopeName": "source.ext.erb",
-            "injectTo": ["source.js.erb"],
-            "embeddedLanguages": {
-                "source.ruby": "ruby"
+        "languages": [
+            {
+                "id": "js.erb",
+                "aliases": ["JavaScript (ERB)"],
+                "extensions": [".js.erb"],
+                "configuration": "./language-configurations/js.erb.configuration.json"
+            },
+            {
+                "id": "latex.erb",
+                "aliases": ["LaTeX (ERB)"],
+                "extensions": [
+                    ".pdf.erb",
+                    ".pdf.erbtex",
+                    ".tex.erb",
+                    ".ltx.erb",
+                    ".ctx.erb"
+                ],
+                "configuration": "./language-configurations/latex.erb.configuration.json"
+            },
+            {
+                "id": "tex.erb",
+                "aliases": ["TeX (ERB)"],
+                "extensions": [
+                    ".sty.erb",
+                    ".cls.erb",
+                    ".bbx.erb",
+                    ".cbx.erb"
+                ],
+                "configuration": "./language-configurations/tex.erb.configuration.json"
+            },
+            {
+                "id": "bibtex.erb",
+                "aliases": ["BibTeX (ERB)"],
+                "extensions": [".bib.erb"],
+                "configuration": "./language-configurations/bibtex.erb.configuration.json"
             }
-        }]
+        ],
+        "grammars": [
+            {
+                "language": "js.erb",
+                "path": "./syntaxes/js.erb.tmLanguage.json",
+                "scopeName": "source.js.erb"
+            },
+            {
+                "language": "latex.erb",
+                "path": "./syntaxes/latex.erb.tmLanguage.json",
+                "scopeName": "source.latex.erb"
+            },
+            {
+                "language": "tex.erb",
+                "path": "./syntaxes/tex.erb.tmLanguage.json",
+                "scopeName": "source.tex.erb"
+            },
+            {
+                "language": "bibtex.erb",
+                "path": "./syntaxes/bibtex.erb.tmLanguage.json",
+                "scopeName": "source.bibtex.erb"
+            },
+            {
+                "language": "erb",
+                "path": "./syntaxes/erb.tmLanguage.json",
+                "scopeName": "source.ext.erb",
+                "injectTo": [
+                    "source.js.erb",
+                    "source.latex.erb",
+                    "source.tex.erb",
+                    "source.bibtex.erb"
+                ],
+                "embeddedLanguages": {
+                    "source.ruby": "ruby"
+                }
+            }
+        ]
     }
 }

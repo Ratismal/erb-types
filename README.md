@@ -1,5 +1,25 @@
 # erb-types
+## Description
 
-This VSCode extension adds support for various flavours of ERB, such as .js.erb files.
+This VSCode extension adds support for various flavours of ERB files.
 
-Note: only supports .js.erb right now.
+## Currently supported languages:
+
+* JavaScript (ERB)
+    - *.js.erb*
+* LaTeX (ERB) - *[rails-latex](https://github.com/amagical-net/rails-latex)*
+    - *.pdf.erb*
+    - *.pdf.erbtex*
+    - *.tex.erb*
+    - *.ltx.erb*
+    - *.ctx.erb*
+* BibTeX (ERB)
+    - *.bib.erb*
+* TeX (ERB)
+    - *.sty.erb*
+    - *.cls.erb*
+    - *.bbx.erb*
+    - *.cbx.erb*
+
+## Contributions
+    * Alexis Ramis

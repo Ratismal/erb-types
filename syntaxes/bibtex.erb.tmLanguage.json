@@ -1,10 +1,10 @@
 {
     "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
-    "name": "JavaScript (ERB)",
-    "scopeName": "source.js.erb",
+    "name": "BibTeX (ERB)",
+    "scopeName": "source.bibtex.erb",
     "patterns": [
         {
-            "include": "source.js"
+            "include": "text.bibtex"
         }
     ],
     "repository": {}
