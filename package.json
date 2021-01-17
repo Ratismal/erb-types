@@ -2,7 +2,7 @@
     "name": "erb-types",
     "displayName": "erb-types",
     "description": "",
-    "version": "0.0.1",
+    "version": "0.1.0",
     "engines": {
         "vscode": "^1.34.0"
     },
@@ -12,24 +12,47 @@
     ],
     "repository": {"type": "git", "url": "https://github.com/Ratismal/erb-types"},
     "contributes": {
-        "languages": [{
-            "id": "js.erb",
-            "aliases": ["JavaScript (ERB)"],
-            "extensions": [".js.erb"],
-            "configuration": "./language-configuration.json"
-        }],
-        "grammars": [{
-            "language": "js.erb",
-            "path": "./syntaxes/js.erb.tmLanguage.json",
-            "scopeName": "source.js.erb"
-        }, {
-            "language": "erb",
-            "path": "./syntaxes/erb.tmLanguage.json",
-            "scopeName": "source.ext.erb",
-            "injectTo": ["source.js.erb"],
-            "embeddedLanguages": {
-                "source.ruby": "ruby"
+        "languages": [
+            {
+                "id": "js.erb",
+                "aliases": ["JavaScript (ERB)"],
+                "extensions": [".js.erb"],
+                "configuration": "./language-configurations/js.erb.configuration.json"
+            },
+            {
+                "id": "pdf.erb",
+                "aliases": ["LaTeX (ERB)"],
+                "extensions": [
+                    ".pdf.erb",
+                    ".pdf.erbtex",
+                    ".tex.erb"
+                ],
+                "configuration": "./language-configurations/pdf.erb.configuration.json"
             }
-        }]
+        ],
+        "grammars": [
+            {
+                "language": "js.erb",
+                "path": "./syntaxes/js.erb.tmLanguage.json",
+                "scopeName": "source.js.erb"
+            },
+            {
+                "language": "pdf.erb",
+                "path": "./syntaxes/pdf.erb.tmLanguage.json",
+                "scopeName": "source.pdf.erb"
+            },
+            {
+                "language": "erb",
+                "path": "./syntaxes/erb.tmLanguage.json",
+                "scopeName": "source.ext.erb",
+                "injectTo": [
+                    "source.js.erb",
+                    "source.pdf.erb"
+                ],
+                "embeddedLanguages": {
+                    "source.ruby": "ruby"
+                }
+            }
+        ]
     }
 }

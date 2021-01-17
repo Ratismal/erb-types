@@ -1,24 +1,24 @@
 {
-	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
-	"name": "ERB",
+    "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+    "name": "ERB",
     "scopeName": "source.ext.erb",
     "injectionSelector": "L:source",
-	"patterns": [
-		{
-			"include": "#erb"
-		}
-	],
-	"repository": {
-		"erb": {
-			"patterns": [{
-                "include": "#literals" 
+    "patterns": [
+        {
+            "include": "#erb"
+        }
+    ],
+    "repository": {
+        "erb": {
+            "patterns": [{
+                "include": "#literals"
             }, {
-				"include": "#erbExpression"
-			}, {
-                "include": "#erbComment" 
+                "include": "#erbExpression"
             }, {
-				"include": "#erbCode"
-			}]
+                "include": "#erbComment"
+            }, {
+                "include": "#erbCode"
+            }]
         },
         "literals": {
             "patterns": [{
@@ -33,31 +33,31 @@
             "name": "comment.block.erb",
             "patterns": []
         },
-		"erbCode": {
-			"begin": "<%",
-			"end": "-?%>",
-			"beginCaptures": {
-				"0": { "name": "punctuation.erb.open" }
-			},
-			"endCaptures": {
-				"0": { "name": "punctuation.erb.close" }
-			},
-            "contentName": "source.ruby",
-            "name": "meta.embedded.block.erb",
-			"patterns": [{"include": "#erbEmbed"}]
-		},
-		"erbExpression": {
-			"begin": "<%=",
-			"end": "%>",
-			"beginCaptures": {
-				"0": { "name": "punctuation.erb.open" }
-			},
-			"endCaptures": {
-				"0": { "name": "punctuation.erb.close" }
+        "erbCode": {
+            "begin": "<%",
+            "end": "-?%>",
+            "beginCaptures": {
+                "0": { "name": "punctuation.erb.open" }
+            },
+            "endCaptures": {
+                "0": { "name": "punctuation.erb.close" }
             },
             "contentName": "source.ruby",
             "name": "meta.embedded.block.erb",
-			"patterns": [{"include": "#erbEmbed"}]
+            "patterns": [{"include": "#erbEmbed"}]
+        },
+        "erbExpression": {
+            "begin": "<%=",
+            "end": "%>",
+            "beginCaptures": {
+                "0": { "name": "punctuation.erb.open" }
+            },
+            "endCaptures": {
+                "0": { "name": "punctuation.erb.close" }
+            },
+            "contentName": "source.ruby",
+            "name": "meta.embedded.block.erb",
+            "patterns": [{"include": "#erbEmbed"}]
         },
         "erbEmbed": {
             "name": "meta.embedded.block.ruby",
@@ -69,5 +69,5 @@
                 "include": "source.ruby"
             }]
         }
-	}
+    }
 }
