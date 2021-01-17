@@ -1,10 +1,10 @@
 {
     "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
-    "name": "LaTeX (ERB)",
-    "scopeName": "source.pdf.erb",
+    "name": "TeX (ERB)",
+    "scopeName": "source.tex.erb",
     "patterns": [
         {
-            "include": "text.tex.latex"
+            "include": "text.tex"
         }
     ],
     "repository": {}

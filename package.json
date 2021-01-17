@@ -2,7 +2,7 @@
     "name": "erb-types",
     "displayName": "erb-types",
     "description": "",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "engines": {
         "vscode": "^1.34.0"
     },
@@ -20,14 +20,33 @@
                 "configuration": "./language-configurations/js.erb.configuration.json"
             },
             {
-                "id": "pdf.erb",
+                "id": "latex.erb",
                 "aliases": ["LaTeX (ERB)"],
                 "extensions": [
                     ".pdf.erb",
                     ".pdf.erbtex",
-                    ".tex.erb"
+                    ".tex.erb",
+                    ".ltx.erb",
+                    ".ctx.erb"
                 ],
-                "configuration": "./language-configurations/pdf.erb.configuration.json"
+                "configuration": "./language-configurations/latex.erb.configuration.json"
+            },
+            {
+                "id": "tex.erb",
+                "aliases": ["TeX (ERB)"],
+                "extensions": [
+                    ".sty.erb",
+                    ".cls.erb",
+                    ".bbx.erb",
+                    ".cbx.erb"
+                ],
+                "configuration": "./language-configurations/tex.erb.configuration.json"
+            },
+            {
+                "id": "bibtex.erb",
+                "aliases": ["BibTeX (ERB)"],
+                "extensions": [".bib.erb"],
+                "configuration": "./language-configurations/bibtex.erb.configuration.json"
             }
         ],
         "grammars": [
@@ -37,9 +56,19 @@
                 "scopeName": "source.js.erb"
             },
             {
-                "language": "pdf.erb",
-                "path": "./syntaxes/pdf.erb.tmLanguage.json",
-                "scopeName": "source.pdf.erb"
+                "language": "latex.erb",
+                "path": "./syntaxes/latex.erb.tmLanguage.json",
+                "scopeName": "source.latex.erb"
+            },
+            {
+                "language": "tex.erb",
+                "path": "./syntaxes/tex.erb.tmLanguage.json",
+                "scopeName": "source.tex.erb"
+            },
+            {
+                "language": "bibtex.erb",
+                "path": "./syntaxes/bibtex.erb.tmLanguage.json",
+                "scopeName": "source.bibtex.erb"
             },
             {
                 "language": "erb",
@@ -47,7 +76,9 @@
                 "scopeName": "source.ext.erb",
                 "injectTo": [
                     "source.js.erb",
-                    "source.pdf.erb"
+                    "source.latex.erb",
+                    "source.tex.erb",
+                    "source.bibtex.erb"
                 ],
                 "embeddedLanguages": {
                     "source.ruby": "ruby"

@@ -1,0 +1,14 @@
+{
+    "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+    // A name for the grammar
+    "name": "My example Language name",
+    // It should be a unique scope name to identify the new grammar
+    "scopeName": "source.example.erb",
+    "patterns": [
+        {
+            // Name of the original grammar on which erb would be injected
+            "include": "source.text.example"
+        }
+    ],
+    "repository": {}
+}
